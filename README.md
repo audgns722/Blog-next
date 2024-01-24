@@ -9,7 +9,7 @@ npm install next-auth
 npm install prisma
 npm install @prisma/client
 npm install @auth/prisma-adapter
-
+npm i moment
 ```
 
 ```
@@ -20,3 +20,4 @@ npx prisma studio                               // prisma 화면
 
 ## 
 context 전역변수상태관리
+slug seo최적화
