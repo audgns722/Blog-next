@@ -20,7 +20,7 @@ export default async function Category({ cate }) {
         <div className="list__bottom">
             <div className="list__nav">
                 <div className="left">
-                    <span><Link href='/' className={!cate ? 'active' : ''}>ALL</Link></span>
+                    <span className='all'><Link href='/' className={!cate ? 'active' : ''}>ALL</Link></span>
                     {data.map((item) => (
                         <span key={item.id}><Link href={`?cate=${item.slug}`} className={cate === item.slug ? 'active' : ''}>{item.title}</Link></span>
                     ))}

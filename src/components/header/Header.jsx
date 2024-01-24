@@ -9,7 +9,7 @@ export default function Header() {
             <div className='header__wrap'>
                 <div className='left'>
                     <h1 className='logo'>
-                        <Link href="/">Hun`s blog</Link>
+                        <Link href="/">HUN`S BLOG</Link>
                     </h1>
                     <nav className='nav'>
                         <ul>

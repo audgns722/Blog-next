@@ -1,4 +1,5 @@
 // font
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
@@ -335,8 +336,8 @@ body {
       h1 {
         font-size: 24px;
         padding: 15px;
-        font-weight: bold;
-        text-transform: capitalize;
+        text-transform: uppercase;
+        font-family: 'Salsa';
       }
 
       .nav {
@@ -344,18 +345,20 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        margin-right: 10px;
 
         ul {
           display: flex;
+          gap: 5px;
         }
 
         li {
           a {
             display: inline-block;
             padding: 10px;
-            font-size: 16px;
+            font-size: 14px;
             position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
 
             &.active,
             &:hover {
@@ -363,7 +366,7 @@ body {
               &::before {
                 content: '';
                 width: 80%;
-                height: 2px;
+                height: 1px;
                 bottom: 5px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -377,20 +380,26 @@ body {
     }
 
     .right {
-      margin-right: 60px;
+      padding-right: 70px;
+      height: 100%;
       display: flex;
       align-items: center;
-      font-family: var(--mainfont-nanum);
+      font-family: var(--mainfont-nexon);
+      position: relative;
 
       ul {
         display: flex;
-        gap: 5px;
+        gap: 10px;
 
         li {
-          padding: 10px 0px;
 
           a,
           span {
+            font-family: var(--mainfont-nanum);
+            background-color: var(--black);
+            color: var(--white);
+            border-radius: 30px;
+            padding: 5px 10px;
             font-size: 14px;
             cursor: pointer;
           }
@@ -409,7 +418,7 @@ body {
   display: flex;
   cursor: pointer;
   position: absolute;
-  right: 1rem;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   border: 1px solid var(--black);
@@ -785,7 +794,6 @@ body {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 10px;
 
   .list__nav {
     width: 100%;
@@ -799,17 +807,24 @@ body {
       gap: 5px;
     }
 
-    a {
-      padding: 10px 15px;
-      background-color: var(--black);
-      color: var(--white);
-      cursor: pointer;
-      transition: all 0.3s;
+    .all {
+      border-right: 1px solid #ccc;
+    }
 
-      &.active,
-      &:hover {
-        background-color: var(--white);
-        color: var(--black);
+    span {
+      a {
+        padding: 10px 15px;
+        color: var(--white);
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-size: 14px;
+
+        &.active {
+          text-decoration: underline;
+          text-underline-position: under;
+          font-weight: 700;
+        }
       }
     }
   }
@@ -964,7 +979,7 @@ body {
 }
 
 .main__contents {
-  padding: 30px;
+  padding: 30px 0;
 }
 
 // blogDetail
