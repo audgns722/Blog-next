@@ -39,15 +39,15 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid()) @map("_id")
+  id            String     @id @default(cuid()) @map("_id")
   name          String?
-  email         String    @unique
+  email         String     @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Post          Post[]
-  Comment       Comment[]
+  post          BlogPost[]
+  comments      Comments[]
 }
 
 model VerificationToken {
@@ -59,34 +59,34 @@ model VerificationToken {
 }
 
 model Category {
-  id    String  @id @default(cuid()) @map("_id")
-  slug  String  @unique
+  id    String     @id @default(cuid()) @map("_id")
+  slug  String     @unique
   title String
   img   String?
-  Posts Post[]
+  post  BlogPost[]
 }
 
-model Post {
-  id        String    @id @default(cuid()) @map("_id")
-  createdAt DateTime  @default(now())
-  slug      String    @unique
+model BlogPost {
+  id        String     @id @default(cuid()) @map("_id")
+  createdAt DateTime   @default(now())
+  slug      String     @unique
   title     String
   desc      String
   img       String?
-  views     Int       @default(0)
-  catSlug   String
-  cat       Category  @relation(fields: [catSlug], references: [slug])
+  views     Int        @default(0)
+  cateSlug  String
+  cate      Category   @relation(fields: [cateSlug], references: [slug])
   userEmail String
-  user      User      @relation(fields: [userEmail], references: [email])
-  comments  Comment[]
+  user      User       @relation(fields: [userEmail], references: [email])
+  comments  Comments[]
 }
 
-model Comment {
+model Comments {
   id        String   @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
   desc      String
   userEmail String
   user      User     @relation(fields: [userEmail], references: [email])
   postSlug  String
-  post      Post     @relation(fields: [postSlug], references: [slug])
+  post      BlogPost @relation(fields: [postSlug], references: [slug])
 }

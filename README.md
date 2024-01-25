@@ -10,6 +10,8 @@ npm install prisma
 npm install @prisma/client
 npm install @auth/prisma-adapter
 npm i moment
+npm install react-quill
+npm i swr
 ```
 
 ```
@@ -21,3 +23,5 @@ npx prisma studio                               // prisma 화면
 ## 
 context 전역변수상태관리
 slug seo최적화
+
+swr 훅 비동기방식

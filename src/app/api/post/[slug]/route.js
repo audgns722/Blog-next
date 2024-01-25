@@ -6,7 +6,7 @@ export const GET = async (req, { params }) => {
     const { slug } = params;
 
     try {
-        const post = await prisma.post.update({
+        const post = await prisma.BlogPost.update({
             where: { slug },
             data: { views: { increment: 1 } },
             include: { user: true }

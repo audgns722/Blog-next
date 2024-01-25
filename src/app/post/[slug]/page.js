@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import moment from 'moment'
+import Comments from '@/components/comments/Comments'
 
 const getData = async (slug) => {
     const res = await fetch(`http://localhost:3000/api/post/${slug}`, {
@@ -53,45 +54,7 @@ export default async function page({ params }) {
                         </div>
                     </div>
                 </div>
-                <div className="detail__comments">
-                    <form>
-                        <fieldset>
-                            <input className="comment" type='text' placeholder='댓글을 작성해주세요'></input>
-                            <input className="password" type='password' placeholder='비밀번호는 4자리 입니다.'></input>
-                            <button>작성</button>
-                        </fieldset>
-                    </form>
-                    <div className="comment__list">
-                        <div className="title">블로그가 너무 이쁘네요</div>
-                        <div className="right">
-                            <div className="profile">
-                                <div className="profileimg"></div>
-                                <div className="auth">익명</div>
-                            </div>
-                            <div className="date">24.01.18 작성됨</div>
-                        </div>
-                    </div>
-                    <div className="comment__list">
-                        <div className="title">블로그가 너무 이쁘네요 블로그가 너무 이쁘네요</div>
-                        <div className="right">
-                            <div className="profile">
-                                <div className="profileimg"></div>
-                                <div className="auth">익명</div>
-                            </div>
-                            <div className="date">24.01.18 작성됨</div>
-                        </div>
-                    </div>
-                    <div className="comment__list">
-                        <div className="title">블로그가 너무 이쁘네요</div>
-                        <div className="right">
-                            <div className="profile">
-                                <div className="profileimg"></div>
-                                <div className="auth">익명</div>
-                            </div>
-                            <div className="date">24.01.18 작성됨</div>
-                        </div>
-                    </div>
-                </div>
+                <Comments slug={slug} />
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ const getData = async () => {
 
 export default async function Category({ cate }) {
     const data = await getData();
-    console.log(`cate: ${cate}`)
+    // console.log(`cate: ${cate}`)
     return (
         <div className="list__bottom">
             <div className="list__nav">
@@ -25,7 +25,7 @@ export default async function Category({ cate }) {
                         <span key={item.id}><Link href={`?cate=${item.slug}`} className={cate === item.slug ? 'active' : ''}>{item.title}</Link></span>
                     ))}
                 </div>
-                <Link href="/blogWrite">글쓰기</Link>
+                <Link href="/blogWrite" className='write__btn'>글쓰기</Link>
             </div>
         </div>
     )

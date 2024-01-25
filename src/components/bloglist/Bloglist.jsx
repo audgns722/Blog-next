@@ -15,13 +15,13 @@ const getData = async (page, cate) => {
 }
 
 export default async function Bloglist({ page, cate }) {
-    const { posts, count } = await getData(page, cate);
+    const { post, count } = await getData(page, cate);
     const postView = 2;
 
     return (
         <>
             <div className="lists__wrap">
-                {posts.map((item) => (
+                {post.map((item) => (
                     <Card item={item} key={item.id} />
                 ))}
             </div>
